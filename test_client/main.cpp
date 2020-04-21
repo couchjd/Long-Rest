@@ -2,8 +2,16 @@
 
 int main() 
 {
+	while (true)
+	{
+		;
+	}
+
 	Spell* test_spell = new MagerySpell();
-	MaterialComponent test_mat_comp;
+
+	struct Elements elemantality(100, 99, 98, 97, 96, 95);
+
+	MaterialComponent test_mat_comp(elemantality);
 	SomaticComponent test_som_comp;
 	test_spell->addComponent(test_mat_comp);
 	test_spell->addComponent(test_som_comp);
