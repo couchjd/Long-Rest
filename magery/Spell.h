@@ -16,7 +16,7 @@ class __declspec(dllexport) Spell
 public:
 	Spell();
 	
-	Spell(const std::vector<SpellComponent>& components);
+	Spell(std::vector<SpellComponent>& components);
 
 	~Spell();
 

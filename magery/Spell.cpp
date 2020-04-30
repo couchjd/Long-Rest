@@ -7,8 +7,13 @@ Spell::Spell()
 	m_somatic_components = {};
 }
 
-Spell::Spell(const std::vector<SpellComponent>& components) 
+Spell::Spell(std::vector<SpellComponent>& components) 
 {
+	Spell();
+	for (SpellComponent& component : components)
+	{
+		addComponent(component);
+	}
 }
 
 Spell::~Spell() 
