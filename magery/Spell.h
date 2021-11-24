@@ -23,10 +23,12 @@ public:
 	void addComponent(SpellComponent& component);
 
 private:
+#pragma warning(push)
+#pragma warning(disable:4251)
 	MaterialComponentVector m_material_components;
 	VerbalComponentVector m_verbal_components;
 	SomaticComponentVector m_somatic_components;
-
+#pragma warning(pop)
 };
 
 #endif // !SPELL_H

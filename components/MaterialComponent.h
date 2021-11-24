@@ -3,7 +3,7 @@
 
 #include "SpellComponent.h"
 
-struct Elements 
+struct __declspec(dllexport) Elements
 {
 	int m_earth;
 	int m_air;
