@@ -1,6 +1,8 @@
 #include <Actor.h>
 #include <MagerySpell.h>
 
+//Testing branching
+
 int main() 
 {
 	Spell* test_spell = new MagerySpell();
