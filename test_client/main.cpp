@@ -1,13 +1,11 @@
 #include <MagerySpell.h>
+#include <SFML/Graphics.hpp>
 
 int main() 
 {
-	while (true)
-	{
-		;
-	}
-
 	Spell* test_spell = new MagerySpell();
+
+	sf::CircleShape shape(100.f);
 
 	struct Elements elemantality(100, 99, 98, 97, 96, 95);
 
