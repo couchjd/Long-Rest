@@ -76,10 +76,10 @@
     <IncludePath>$(SolutionDir)\magery;$(SolutionDir)\components;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>D:\PROGRAMMING\Long-Rest\Actor;$(SolutionDir)\include;$(SolutionDir)\magery;$(SolutionDir)\components;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Actor;$(SolutionDir)\include;$(SolutionDir)\magery;$(SolutionDir)\components;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>D:\PROGRAMMING\Long-Rest\Actor;$(SolutionDir)\include;$(SolutionDir)\magery;$(SolutionDir)\components;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)Actor;$(SolutionDir)\include;$(SolutionDir)\magery;$(SolutionDir)\components;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>

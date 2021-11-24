@@ -1,4 +1,5 @@
 #include <Actor.h>
+#include <DrawableActor.h>
 #include <MagerySpell.h>
 
 //Testing branching
