@@ -21,12 +21,18 @@
     <ClInclude Include="MagerySpell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Spellbook.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MagerySpell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="Spell.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Spellbook.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

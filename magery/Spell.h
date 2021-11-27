@@ -1,5 +1,4 @@
-#ifndef SPELL_H
-#define SPELL_H
+#pragma once
 
 #include <vector>
 
@@ -39,6 +38,3 @@ private:
 	SomaticComponentVector m_somatic_components;
 #pragma warning(pop)
 };
-
-#endif // !SPELL_H
-
