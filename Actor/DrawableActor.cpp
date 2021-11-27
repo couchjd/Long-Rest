@@ -2,7 +2,8 @@
 
 void 
 DrawableActor::draw(
-	sf::RenderTarget & target, 
+	sf::RenderTarget& target, 
 	sf::RenderStates states) const
 {
+	target.draw(m_sprite, states);
 }
