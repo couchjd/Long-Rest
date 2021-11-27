@@ -12,3 +12,9 @@ MaterialComponent::MaterialComponent(const struct Elements& elementality)
 	m_elementality = elementality;
 }
 
+const Elements& 
+MaterialComponent::getElementatlity()
+{
+	return m_elementality;
+}
+

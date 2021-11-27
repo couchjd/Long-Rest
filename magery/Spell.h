@@ -22,6 +22,15 @@ public:
 
 	void addComponent(SpellComponent& component);
 
+	const MaterialComponentVector&
+	getMaterialComponents();
+	
+	const VerbalComponentVector&
+	getVerbalComponents();
+	
+	const SomaticComponentVector&
+	getSomaticComponents();
+
 private:
 #pragma warning(push)
 #pragma warning(disable:4251)

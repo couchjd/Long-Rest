@@ -12,7 +12,9 @@ class __declspec(dllexport) SpellComponent
 {
 public:
 	SpellComponent();
-	const ComponentTypeEnum& getComponentType();
+	
+	const ComponentTypeEnum& 
+	getComponentType();
 
 protected:
 	ComponentTypeEnum m_component_type;

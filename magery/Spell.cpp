@@ -43,3 +43,21 @@ void Spell::addComponent(SpellComponent& component)
 			break;
 	}
 }
+
+const MaterialComponentVector& 
+Spell::getMaterialComponents()
+{
+	return m_material_components;
+}
+
+const VerbalComponentVector& 
+Spell::getVerbalComponents()
+{
+	return m_verbal_components;
+}
+
+const SomaticComponentVector& 
+Spell::getSomaticComponents()
+{
+	return m_somatic_components;
+}

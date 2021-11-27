@@ -42,6 +42,9 @@ class __declspec(dllexport) MaterialComponent : public SpellComponent
 public:
 	MaterialComponent();
 	MaterialComponent(const struct Elements& elementality);
+
+	const Elements& 
+	getElementatlity();
 	
 private:
 	struct Elements m_elementality;
