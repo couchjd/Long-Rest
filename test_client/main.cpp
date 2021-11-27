@@ -8,7 +8,7 @@ int main()
 {
 	Spell* test_spell = new MagerySpell();
 
-	Actor* actor = new Actor();
+	Actor* actor = new DrawableActor();
 
 	sf::Vector2f actor_pos = actor->getPosition();
 

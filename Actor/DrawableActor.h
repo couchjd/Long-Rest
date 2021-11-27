@@ -6,8 +6,9 @@
 #include <SFML/Graphics/RenderStates.hpp>
 #include <SFML/Graphics/RenderTarget.hpp>
 
-class DrawableActor : public Actor, public sf::Drawable
+class __declspec(dllexport) DrawableActor : public Actor, public sf::Drawable
 {
-	virtual void 
+public:
+	virtual void
 	draw(sf::RenderTarget& target, sf::RenderStates states) const override;
 };

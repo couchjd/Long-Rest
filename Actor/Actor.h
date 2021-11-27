@@ -1,7 +1,7 @@
 #pragma once
 #include <SFML/Graphics/Transformable.hpp>
 
-class Actor : public sf::Transformable
+class __declspec(dllexport) Actor : public sf::Transformable
 {
 
 
