@@ -73,10 +73,12 @@
   <ItemGroup>
     <ClInclude Include="MagerySpell.h" />
     <ClInclude Include="Spell.h" />
+    <ClInclude Include="Spellbook.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="MagerySpell.cpp" />
     <ClCompile Include="Spell.cpp" />
+    <ClCompile Include="Spellbook.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\components\components.vcxproj">

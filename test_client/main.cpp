@@ -1,6 +1,8 @@
 #include "imgui/imgui.h"
 #include "imgui-sfml/imgui-SFML.h"
 
+#include <nlohmann/json.hpp>
+
 #include <SFML/Graphics/RenderWindow.hpp>
 #include <SFML/System/Clock.hpp>
 #include <SFML/Window/Event.hpp>
@@ -14,9 +16,10 @@ void testMagery();
 void testActor();
 void testImgui();
 
+using json = nlohmann::json;
+
 int main() 
 {
-
 	testImgui();
 	testMagery();
 	testActor();
@@ -75,7 +78,7 @@ void testImgui()
 
 	// let's use char array as buffer, see next part
 	// for instructions on using std::string with ImGui
-	char windowTitle[255] = "ImGui + SFML = <3";
+	char windowTitle[255] = "Long Rest";
 
 	window.setTitle(windowTitle);
 	window.resetGLStates(); // call it if you only draw ImGui. Otherwise not needed.

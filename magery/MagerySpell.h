@@ -1,5 +1,4 @@
-#ifndef MAGERY_SPELL_H
-#define MAGERY_SPELL_H
+#pragma once
 
 #include "Spell.h"
 
@@ -11,6 +10,3 @@ public:
 private:
 
 };
-
-#endif // !MAGERY_SPELL_H
-
