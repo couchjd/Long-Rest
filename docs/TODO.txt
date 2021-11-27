@@ -1,0 +1,4 @@
+- Add json test in test_client
+- Create spell editor with imgui
+- Generate test spells and fill spellbook for testing
+- 
