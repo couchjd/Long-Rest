@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2019
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client", "test_client\test_client.vcxproj", "{5CB75A91-AF95-42CB-8163-6CFCA6CA1BEF}"
+EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "magery", "magery\magery.vcxproj", "{AEE04CFF-2947-4E09-BCEF-E5F10BEB1891}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "components", "components\components.vcxproj", "{83FEFB83-D9E9-476F-9040-BC95A6169434}"
-EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "test_client", "test_client\test_client.vcxproj", "{5CB75A91-AF95-42CB-8163-6CFCA6CA1BEF}"
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Actor", "Actor\Actor.vcxproj", "{95A0BB22-4814-4128-A559-0736CCAA9E91}"
 EndProject
