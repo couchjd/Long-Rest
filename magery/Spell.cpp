@@ -61,3 +61,31 @@ Spell::getSomaticComponents()
 {
 	return m_somatic_components;
 }
+
+bool Spell::operator==(const Spell& other)
+{
+	// TODO: Implement this:
+	// If all material components are equal, return true.
+	// We'll also need to check verbal and somatic components as well
+	// eventually. But, for testing, we'll just worry about material components
+	// since the other component types haven't been fleshed-out yet.
+	bool equal = true;
+	for (auto& material_component : m_material_components)
+	{
+		bool found = false;
+		for (auto& other_material_component : other.m_material_components)
+		{
+			if (material_component == other_material_component)
+			{
+				found = true;
+			}
+			break;
+		}
+		if (false == found)
+		{
+			equal = false;
+			break;
+		}
+	}
+	return equal;
+}

@@ -45,6 +45,9 @@ public:
 
 	const Elements& 
 	getElementatlity();
+
+	bool
+	operator==(const MaterialComponent& other);
 	
 private:
 	struct Elements m_elementality;
