@@ -15,7 +15,6 @@
 
 #include <iostream>
 
-void testMagery();
 void testActor();
 void testImgui();
 
@@ -24,35 +23,9 @@ using json = nlohmann::json;
 int main() 
 {
 	testImgui();
-	testMagery();
 	testActor();
 
-	std::getchar();
 	return 0;
-}
-
-void testMagery()
-{
-	std::cout << "TESTING MAGIC SYSTEM" << std::endl;
-	Spell* test_spell = new MagerySpell();
-
-	struct Elements elementality(100, 99, 98, 97, 96, 95);
-
-	MaterialComponent test_mat_comp(elementality);
-	SomaticComponent test_som_comp;
-
-	test_spell->addComponent(test_mat_comp);
-	test_spell->addComponent(test_som_comp);
-
-	MaterialComponentVector test_get_mat_comp = test_spell->getMaterialComponents();
-	
-	for (auto& mat_component : test_get_mat_comp)
-	{
-		Elements elements = mat_component.getElementatlity();
-		std::cout << "Component type: " << mat_component.getComponentType() << ": " <<
-			elements.m_air << " " << elements.m_arcane << " " << elements.m_earth << " " <<
-			elements.m_fire << " " << elements.m_nature << " " << elements.m_water << std::endl;
-	}
 }
 
 void testActor()
@@ -75,7 +48,6 @@ void testImgui()
 	window.setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(window);
 	SpellCreator spell_creator;
-	SpellbookWindow spellbook_window(spell_creator.getSpellbook());
 
 	sf::Color bgColor;
 
@@ -104,11 +76,7 @@ void testImgui()
 
 		if (spell_creator.getShowWindow())
 		{
-			spell_creator.showMainWindow();
-		}
-		if (spellbook_window.getShowWindow())
-		{
-			spellbook_window.showWindow();
+			spell_creator.showWindows();
 		}
 		
 		window.clear(bgColor); // fill background with color
