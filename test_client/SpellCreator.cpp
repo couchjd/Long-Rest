@@ -9,10 +9,11 @@ const char* MAIN_WINDOW = "Spell Creation";
 
 SpellCreator::SpellCreator() : m_show_main_window(true)
 {
+	m_spellbook_window = new SpellbookWindow(&m_spellbook);
 }
 
 void
-SpellCreator::showMainWindow()
+SpellCreator::showWindows()
 {
 	if (!ImGui::Begin(MAIN_WINDOW, &m_show_main_window)) // begin window
 	{
@@ -32,12 +33,27 @@ SpellCreator::showMainWindow()
 			addSpell();
 		}
 
-		if (ImGui::Button("Open Spellbook"))
+		if (!m_spellbook_window->getShowWindow())
 		{
-			openSpellbook();
+			if (ImGui::Button("Open Spellbook"))
+			{
+				openSpellbook();
+			}
+		}
+		else
+		{
+			if (ImGui::Button("Close Spellbook"))
+			{
+				closeSpellbook();
+			}
 		}
 
 		ImGui::End(); // end window
+	}
+
+	if (m_spellbook_window->getShowWindow())
+	{
+		m_spellbook_window->showWindow();
 	}
 }
 
@@ -74,6 +90,12 @@ SpellCreator::addSpell()
 
 void SpellCreator::openSpellbook()
 {
+	m_spellbook_window->setShowWindow(true);
+}
+
+void SpellCreator::closeSpellbook()
+{
+	m_spellbook_window->setShowWindow(false);
 }
 
 Spellbook* SpellCreator::getSpellbook()

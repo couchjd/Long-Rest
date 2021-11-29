@@ -1,13 +1,14 @@
 #pragma once
 #include <MagerySpell.h>
 #include <Spellbook.h>
+#include "SpellbookWindow.h"
 
 class SpellCreator
 {
 public:
 	SpellCreator();
 
-	void showMainWindow();
+	void showWindows();
 
 	bool getShowWindow();
 
@@ -17,10 +18,13 @@ public:
 
 	void openSpellbook();
 
+	void closeSpellbook();
+
 	Spellbook* getSpellbook();
 
 private:
 	Spellbook m_spellbook;
+	SpellbookWindow* m_spellbook_window;
 
 	bool m_show_main_window;
 	bool m_show_spellbook_window;

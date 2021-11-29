@@ -9,12 +9,12 @@ const char* SPELLBOOK_WINDOW = "Spellbook";
 
 SpellbookWindow::SpellbookWindow() : 
 	m_spellbook(nullptr),
-	m_show_window(true)
+	m_show_window(false)
 {
 }
 
 SpellbookWindow::SpellbookWindow(Spellbook* spellbook) :
-	m_show_window(true)
+	m_show_window(false)
 {
 	m_spellbook = spellbook;
 }
@@ -41,7 +41,6 @@ SpellbookWindow::showWindow()
 
 			ImGui::End(); // end window
 		}
-
 	}
 }
 
