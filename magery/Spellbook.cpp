@@ -21,3 +21,9 @@ void Spellbook::addSpell(Spell& new_spell)
 		std::cout << "Spell already exists!" << std::endl;
 	}
 }
+
+const SpellVector& 
+Spellbook::getSpells()
+{
+	return m_spells;
+}
