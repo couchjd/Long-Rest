@@ -30,6 +30,9 @@ public:
 	const SomaticComponentVector&
 	getSomaticComponents();
 
+	bool
+	operator==(const Spell& other);
+
 private:
 #pragma warning(push)
 #pragma warning(disable:4251)
