@@ -11,6 +11,7 @@
 #include <DrawableActor.h>
 #include <MagerySpell.h>
 #include "SpellCreator.h"
+#include "SpellbookWindow.h"
 
 #include <iostream>
 
@@ -74,6 +75,7 @@ void testImgui()
 	window.setVerticalSyncEnabled(true);
 	ImGui::SFML::Init(window);
 	SpellCreator spell_creator;
+	SpellbookWindow spellbook_window(spell_creator.getSpellbook());
 
 	sf::Color bgColor;
 
@@ -102,9 +104,13 @@ void testImgui()
 
 		if (spell_creator.getShowWindow())
 		{
-			spell_creator.showWindow();
+			spell_creator.showMainWindow();
 		}
-
+		if (spellbook_window.getShowWindow())
+		{
+			spellbook_window.showWindow();
+		}
+		
 		window.clear(bgColor); // fill background with color
 		ImGui::SFML::Render(window);
 		window.display();

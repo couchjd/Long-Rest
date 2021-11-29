@@ -88,6 +88,7 @@
     <ClCompile Include="..\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="SpellbookWindow.cpp" />
     <ClCompile Include="SpellCreator.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -102,6 +103,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="SpellbookWindow.h" />
     <ClInclude Include="SpellCreator.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
