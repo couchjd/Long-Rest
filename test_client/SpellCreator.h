@@ -3,6 +3,8 @@
 #include <Spellbook.h>
 #include "SpellbookWindow.h"
 
+#define SPELL_NAME_SIZE 100
+
 class SpellCreator
 {
 public:
@@ -23,11 +25,15 @@ public:
 	Spellbook* getSpellbook();
 
 private:
+	void drawWidgets();
+
 	Spellbook m_spellbook;
 	SpellbookWindow* m_spellbook_window;
 
 	bool m_show_main_window;
 	bool m_show_spellbook_window;
+
+	char m_spell_name[SPELL_NAME_SIZE];
 
 	int m_earth;
 	int m_air;
