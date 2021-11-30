@@ -5,47 +5,22 @@
 
 #include <iostream>
 
-const char* SPELLBOOK_WINDOW = "Spellbook";
-
 SpellbookWindow::SpellbookWindow() : 
-	m_spellbook(nullptr),
-	m_show_window(false)
+	m_spellbook(nullptr)
 {
 }
 
-SpellbookWindow::SpellbookWindow(Spellbook* spellbook) :
-	m_show_window(false)
+SpellbookWindow::SpellbookWindow(
+	const std::string& window_title,
+	Spellbook* spellbook) :
+	ImGuiWindow(window_title)
 {
 	m_spellbook = spellbook;
 }
 
-void 
-SpellbookWindow::showWindow()
+Spellbook* SpellbookWindow::getSpellbook()
 {
-	if (m_spellbook)
-	{
-		if (!ImGui::Begin(SPELLBOOK_WINDOW, &m_show_window)) // begin window
-		{
-			ImGui::End();
-		}
-		else
-		{
-			drawWidgets();
-			ImGui::End(); // end window
-		}
-	}
-}
-
-bool 
-SpellbookWindow::getShowWindow()
-{
-	return m_show_window;
-}
-
-void 
-SpellbookWindow::setShowWindow(const bool display_window)
-{
-	m_show_window = display_window;
+	return m_spellbook;
 }
 
 void 

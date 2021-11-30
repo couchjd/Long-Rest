@@ -1,22 +1,21 @@
 #pragma once
+#include "ImGuiWindow.h"
 #include <Spellbook.h>
 
-class SpellbookWindow
+class SpellbookWindow : public ImGuiWindow
 {
 public:
 	SpellbookWindow();
 	
-	SpellbookWindow(Spellbook* spellbook);
+	SpellbookWindow(
+		const std::string& window_title,
+		Spellbook* spellbook);
 
-	void showWindow();
-
-	bool getShowWindow();
-
-	void setShowWindow(const bool display_window);
+	Spellbook*
+	getSpellbook();
 
 private:
 	void drawWidgets();
 
-	bool m_show_window;
 	Spellbook* m_spellbook;
 };

@@ -87,9 +87,11 @@
     <ClCompile Include="..\include\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="ImGuiWindow.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SpellbookWindow.cpp" />
     <ClCompile Include="SpellCreator.cpp" />
+    <ClCompile Include="SpellCreatorMainWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Actor\Actor.vcxproj">
@@ -103,8 +105,10 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="ImGuiWindow.h" />
     <ClInclude Include="SpellbookWindow.h" />
     <ClInclude Include="SpellCreator.h" />
+    <ClInclude Include="SpellCreatorMainWindow.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

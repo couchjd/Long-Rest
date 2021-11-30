@@ -68,13 +68,13 @@ void testImgui()
 			}
 			if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
 			{
-				spell_creator.setShowWindow(true);
+				spell_creator.getMainWindow()->setShowWindow(true);
 			}
 		}
 
 		ImGui::SFML::Update(window, deltaClock.restart());
 
-		if (spell_creator.getShowWindow())
+		if (spell_creator.getMainWindow()->getShowWindow())
 		{
 			spell_creator.showWindows();
 		}
