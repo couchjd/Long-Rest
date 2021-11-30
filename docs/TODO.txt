@@ -1,4 +1,6 @@
 - Add json test in test_client
-- Create spell editor with imgui
 - Generate test spells and fill spellbook for testing
-- 
+- Implement json for reading and writing spells
+- Create separate class for Imgui windows
+- Create new class for spell creator main window -- inherited from ImGuiWindow class
+- Inherit from ImGuiWindow class for SpellbookWindow class 
