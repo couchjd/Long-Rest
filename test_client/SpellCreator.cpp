@@ -21,33 +21,7 @@ SpellCreator::showWindows()
 	}
 	else
 	{
-		ImGui::InputInt("Earth", &m_earth);
-		ImGui::InputInt("Air", &m_air);
-		ImGui::InputInt("Fire", &m_fire);
-		ImGui::InputInt("Water", &m_water);
-		ImGui::InputInt("Nature", &m_nature);
-		ImGui::InputInt("Arcane", &m_arcane);
-
-		if (ImGui::Button("Add Spell"))
-		{
-			addSpell();
-		}
-
-		if (!m_spellbook_window->getShowWindow())
-		{
-			if (ImGui::Button("Open Spellbook"))
-			{
-				openSpellbook();
-			}
-		}
-		else
-		{
-			if (ImGui::Button("Close Spellbook"))
-			{
-				closeSpellbook();
-			}
-		}
-
+		drawWidgets();
 		ImGui::End(); // end window
 	}
 
@@ -82,10 +56,12 @@ SpellCreator::addSpell()
 	
 	new_spell->addComponent(test_mat_comp);
 	new_spell->addComponent(test_som_comp); // Default for testing.
+	new_spell->setSpellName(m_spell_name);
 
 	m_spellbook.addSpell(*new_spell);
 
 	m_earth = m_air = m_fire = m_water = m_nature = m_arcane = 0;
+	memset(m_spell_name, 0, SPELL_NAME_SIZE);
 }
 
 void SpellCreator::openSpellbook()
@@ -101,4 +77,39 @@ void SpellCreator::closeSpellbook()
 Spellbook* SpellCreator::getSpellbook()
 {
 	return &m_spellbook;
+}
+
+void 
+SpellCreator::drawWidgets()
+{
+	ImGui::InputText("Spell Name", m_spell_name, SPELL_NAME_SIZE);
+	ImGui::InputInt("Earth", &m_earth);
+	ImGui::InputInt("Air", &m_air);
+	ImGui::InputInt("Fire", &m_fire);
+	ImGui::InputInt("Water", &m_water);
+	ImGui::InputInt("Nature", &m_nature);
+	ImGui::InputInt("Arcane", &m_arcane);
+
+	if (ImGui::Button("Add Spell"))
+	{
+		if (strcmp(m_spell_name, "") != 0)
+		{
+			addSpell();
+		}
+	}
+
+	if (!m_spellbook_window->getShowWindow())
+	{
+		if (ImGui::Button("Open Spellbook"))
+		{
+			openSpellbook();
+		}
+	}
+	else
+	{
+		if (ImGui::Button("Close Spellbook"))
+		{
+			closeSpellbook();
+		}
+	}
 }

@@ -30,12 +30,19 @@ public:
 	const SomaticComponentVector&
 	getSomaticComponents();
 
+	void
+	setSpellName(const std::string& spell_name);
+
+	const std::string&
+	getSpellName();
+
 	bool
 	operator==(const Spell& other);
 
 private:
 #pragma warning(push)
 #pragma warning(disable:4251)
+	std::string m_spell_name;
 	MaterialComponentVector m_material_components;
 	VerbalComponentVector m_verbal_components;
 	SomaticComponentVector m_somatic_components;

@@ -30,15 +30,7 @@ SpellbookWindow::showWindow()
 		}
 		else
 		{
-			int count = 1;
-			for (auto& spell : m_spellbook->getSpells())
-			{
-				std::string spell_name = "Spell " + std::to_string(count);
-
-				ImGui::Button(spell_name.c_str());
-				++count;
-			}
-
+			drawWidgets();
 			ImGui::End(); // end window
 		}
 	}
@@ -55,3 +47,16 @@ SpellbookWindow::setShowWindow(const bool display_window)
 {
 	m_show_window = display_window;
 }
+
+void 
+SpellbookWindow::drawWidgets()
+{
+	int count = 1;
+	for (auto& spell : m_spellbook->getSpells())
+	{
+		ImGui::Button(spell->getSpellName().c_str());
+		++count;
+	}
+}
+
+

@@ -2,6 +2,7 @@
 
 Spell::Spell()
 {
+	m_spell_name = "";
 	m_material_components = {};
 	m_verbal_components = {};
 	m_somatic_components = {};
@@ -60,6 +61,18 @@ const SomaticComponentVector&
 Spell::getSomaticComponents()
 {
 	return m_somatic_components;
+}
+
+void 
+Spell::setSpellName(const std::string& spell_name)
+{
+	m_spell_name = spell_name;
+}
+
+const std::string& 
+Spell::getSpellName()
+{
+	return m_spell_name;
 }
 
 bool Spell::operator==(const Spell& other)

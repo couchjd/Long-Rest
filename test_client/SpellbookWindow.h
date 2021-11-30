@@ -15,7 +15,8 @@ public:
 	void setShowWindow(const bool display_window);
 
 private:
+	void drawWidgets();
+
 	bool m_show_window;
 	Spellbook* m_spellbook;
-
 };
