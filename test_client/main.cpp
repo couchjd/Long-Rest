@@ -1,6 +1,8 @@
 #include "imgui/imgui.h"
 #include "imgui-sfml/imgui-SFML.h"
 
+#include "ImGuiUiManager.h"
+
 #include <nlohmann/json.hpp>
 
 #include <SFML/Graphics/RenderWindow.hpp>
@@ -11,7 +13,6 @@
 #include <DrawableActor.h>
 #include <MagerySpell.h>
 #include "SpellCreator.h"
-#include "SpellbookWindow.h"
 
 #include <iostream>
 
@@ -46,7 +47,11 @@ void testImgui()
 {
 	sf::RenderWindow window(sf::VideoMode(1024, 768), "");
 	window.setVerticalSyncEnabled(true);
-	ImGui::SFML::Init(window);
+
+	ImGuiUIManager ui_manager(&window);
+	SpellCreatorMainWindow main_window;
+	ui_manager.addWindow(&main_window);
+
 	SpellCreator spell_creator;
 
 	sf::Color bgColor;
@@ -61,28 +66,18 @@ void testImgui()
 	while (window.isOpen()) {
 		sf::Event event;
 		while (window.pollEvent(event)) {
-			ImGui::SFML::ProcessEvent(event);
+			ui_manager.processEvent(event);
 
 			if (event.type == sf::Event::Closed) {
 				window.close();
 			}
-			if (sf::Keyboard::isKeyPressed(sf::Keyboard::C))
-			{
-				spell_creator.getMainWindow()->setShowWindow(true);
-			}
-		}
-
-		ImGui::SFML::Update(window, deltaClock.restart());
-
-		if (spell_creator.getMainWindow()->getShowWindow())
-		{
-			spell_creator.showWindows();
 		}
 		
+		ui_manager.update(deltaClock.restart());
+		
 		window.clear(bgColor); // fill background with color
-		ImGui::SFML::Render(window);
+		ui_manager.render();
 		window.display();
 	}
-
-	ImGui::SFML::Shutdown();
+	ui_manager.shutdown();
 }

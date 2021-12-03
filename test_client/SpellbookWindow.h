@@ -1,21 +1,12 @@
 #pragma once
-#include "ImGuiWindow.h"
+#include "GuiBaseWindow.h"
 #include <Spellbook.h>
 
-class SpellbookWindow : public ImGuiWindow
+class SpellbookWindow : public GuiBaseWindow
 {
 public:
 	SpellbookWindow();
-	
-	SpellbookWindow(
-		const std::string& window_title,
-		Spellbook* spellbook);
-
-	Spellbook*
-	getSpellbook();
+	void update() override;
 
 private:
-	void drawWidgets();
-
-	Spellbook* m_spellbook;
 };

@@ -1,25 +1,19 @@
 #pragma once
 
-#include "ImGuiWindow.h"
-#include "SpellbookWindow.h"
+#include "GuiBaseWindow.h"
+#include "SpellCreator.h"
 
 #define SPELL_NAME_SIZE 100
 
-class SpellCreatorMainWindow : public ImGuiWindow
+class SpellCreatorMainWindow : public GuiBaseWindow
 {
 public:
 	SpellCreatorMainWindow();
-
-	SpellCreatorMainWindow(const std::string& window_title, Spellbook* spellbook);
-
-	void showWindow() override;
-
+	void update() override;
 	void addSpell();
 
 private:
-	void drawWidgets() override;
-
-	SpellbookWindow* m_spellbook_window;
+	int counter = 0;
 
 	char m_spell_name[SPELL_NAME_SIZE];
 

@@ -1,19 +1,9 @@
 #include "SpellCreator.h"
 
-#include "imgui/imgui.h"
-#include "imgui-sfml/imgui-SFML.h"
-
 #include <iostream>
 
-SpellCreator::SpellCreator() : m_show_main_window(true)
+SpellCreator::SpellCreator()
 {
-	
-}
-
-void
-SpellCreator::showWindows()
-{
-
 }
 
 Spellbook* SpellCreator::getSpellbook()
@@ -21,8 +11,13 @@ Spellbook* SpellCreator::getSpellbook()
 	return &m_spellbook;
 }
 
-SpellCreatorMainWindow* SpellCreator::getMainWindow()
+void 
+SpellCreator::setShowWindows(bool show_windows)
 {
-	return &m_main_window;
+	m_show_windows = show_windows;
 }
 
+bool SpellCreator::getShowWindows()
+{
+	return m_show_windows;
+}
