@@ -9,6 +9,12 @@ GuiBaseWindow::~GuiBaseWindow()
 {
 }
 
+void 
+GuiBaseWindow::setWindowName(const std::string& window_name)
+{
+	m_window_name = window_name;
+}
+
 bool GuiBaseWindow::begin(std::string name)
 {
 	return ImGui::Begin(name.c_str(), &m_show);

@@ -2,6 +2,8 @@
 #include "imgui-sfml/imgui-SFML.h"
 
 #include "ImGuiUiManager.h"
+#include "InputHandler.h"
+#include "EventHandlerManager.h"
 
 #include <nlohmann/json.hpp>
 
@@ -47,28 +49,35 @@ void testImgui()
 {
 	sf::RenderWindow window(sf::VideoMode(1024, 768), "");
 	window.setVerticalSyncEnabled(true);
+	
+	EventHandlerManager event_handler_manager;
 
 	ImGuiUIManager ui_manager(&window);
+	event_handler_manager.addHandler(ui_manager.getEventHandler());
+
+	InputHandler input_handler;
+	event_handler_manager.addHandler(&input_handler);
+
 	SpellCreatorMainWindow main_window;
 	ui_manager.addWindow(&main_window);
 
-	SpellCreator spell_creator;
-
 	sf::Color bgColor;
 
-	// let's use char array as buffer, see next part
-	// for instructions on using std::string with ImGui
 	char windowTitle[255] = "Long Rest";
 
 	window.setTitle(windowTitle);
 	window.resetGLStates(); // call it if you only draw ImGui. Otherwise not needed.
 	sf::Clock deltaClock;
-	while (window.isOpen()) {
+	while (window.isOpen()) 
+	{
 		sf::Event event;
-		while (window.pollEvent(event)) {
-			ui_manager.processEvent(event);
+		while (window.pollEvent(event)) 
+		{
+			event_handler_manager.callHandlers(event);
+			//ui_manager.processEvent(event);
 
-			if (event.type == sf::Event::Closed) {
+			if (event.type == sf::Event::Closed) 
+			{
 				window.close();
 			}
 		}
@@ -77,6 +86,7 @@ void testImgui()
 		
 		window.clear(bgColor); // fill background with color
 		ui_manager.render();
+
 		window.display();
 	}
 	ui_manager.shutdown();

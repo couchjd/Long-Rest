@@ -2,6 +2,7 @@
 
 SpellCreatorMainWindow::SpellCreatorMainWindow()
 {
+	m_window_name = "Spell Creator";
 	m_earth = m_air = m_fire = m_water = m_nature = m_arcane = 0;
 	memset(m_spell_name, 0, SPELL_NAME_SIZE);
 }
@@ -10,7 +11,7 @@ void SpellCreatorMainWindow::update()
 {
 	if (m_show)
 	{
-		if (begin("Spell Creator"))
+		if (begin(m_window_name))
 		{
 			ImGui::InputText("Spell Name", m_spell_name, SPELL_NAME_SIZE);
 			ImGui::InputInt("Earth", &m_earth);

@@ -87,8 +87,11 @@
     <ClCompile Include="..\include\imgui\imgui_draw.cpp" />
     <ClCompile Include="..\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\include\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="EventHandlerManager.cpp" />
+    <ClCompile Include="ImGuiEventHandler.cpp" />
     <ClCompile Include="ImGuiUiMangager.cpp" />
     <ClCompile Include="GuiBaseWindow.cpp" />
+    <ClCompile Include="InputHandler.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="SpellbookWindow.cpp" />
     <ClCompile Include="SpellCreator.cpp" />
@@ -106,8 +109,12 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="EventHandler.h" />
+    <ClInclude Include="EventHandlerManager.h" />
+    <ClInclude Include="ImGuiEventHandler.h" />
     <ClInclude Include="ImGuiUiManager.h" />
     <ClInclude Include="GuiBaseWindow.h" />
+    <ClInclude Include="InputHandler.h" />
     <ClInclude Include="SpellbookWindow.h" />
     <ClInclude Include="SpellCreator.h" />
     <ClInclude Include="SpellCreatorMainWindow.h" />

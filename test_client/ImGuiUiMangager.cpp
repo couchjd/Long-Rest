@@ -55,3 +55,9 @@ ImGuiUIManager::addWindow(GuiBaseWindow* new_window)
 {
 	m_windows.push_back(new_window);
 }
+
+ImGuiEventHandler* 
+ImGuiUIManager::getEventHandler()
+{
+	return &m_event_handler;
+}
