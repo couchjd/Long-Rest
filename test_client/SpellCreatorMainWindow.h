@@ -4,10 +4,13 @@
 
 #define SPELL_NAME_SIZE 100
 
+class SpellCreator;
+
 class SpellCreatorMainWindow : public GuiBaseWindow
 {
 public:
 	SpellCreatorMainWindow();
+	SpellCreatorMainWindow(SpellCreator* spell_creator);
 	void update() override;
 	void addSpell();
 
@@ -22,4 +25,6 @@ private:
 	int m_water;
 	int m_nature;
 	int m_arcane;
+
+	SpellCreator* m_spell_creator;
 };

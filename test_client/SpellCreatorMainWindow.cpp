@@ -1,7 +1,16 @@
 #include "SpellCreatorMainWindow.h"
 #include <Spell.h>
+#include "SpellCreator.h"
 
 SpellCreatorMainWindow::SpellCreatorMainWindow()
+{
+	m_window_name = "Spell Creator";
+	m_earth = m_air = m_fire = m_water = m_nature = m_arcane = 0;
+	memset(m_spell_name, 0, SPELL_NAME_SIZE);
+}
+
+SpellCreatorMainWindow::SpellCreatorMainWindow(SpellCreator* spell_creator) :
+	m_spell_creator(spell_creator)
 {
 	m_window_name = "Spell Creator";
 	m_earth = m_air = m_fire = m_water = m_nature = m_arcane = 0;
@@ -30,20 +39,24 @@ void SpellCreatorMainWindow::update()
 				}
 			}
 
-			//if (!m_spellbook_window->getShowWindow())
-			//{
-			//	if (ImGui::Button("Open Spellbook"))
-			//	{
-			//		m_spellbook_window->setShowWindow(true);
-			//	}
-			//}
-			//else
-			//{
-			//	if (ImGui::Button("Close Spellbook"))
-			//	{
-			//		m_spellbook_window->setShowWindow(false);
-			//	}
-			//}
+			SpellbookWindow* spellbook_window = m_spell_creator->getSpellbookWindow();
+			if (spellbook_window)
+			{
+				if (!spellbook_window->getShowWindow())
+				{
+					if (ImGui::Button("Open Spellbook"))
+					{
+						spellbook_window->setShowWindow(true);
+					}
+				}
+				else
+				{
+					if (ImGui::Button("Close Spellbook"))
+					{
+						spellbook_window->setShowWindow(false);
+					}
+				}
+			}
 		}
 		end();
 	}
@@ -64,4 +77,6 @@ void SpellCreatorMainWindow::addSpell()
 
 	m_earth = m_air = m_fire = m_water = m_nature = m_arcane = 0;
 	memset(m_spell_name, 0, SPELL_NAME_SIZE);
+
+	m_spell_creator->onAddSpell(new_spell);
 }

@@ -10,8 +10,9 @@ public:
 	~GuiBaseWindow();
 
 	virtual void update() = 0;
-	void show();
 	void setWindowName(const std::string& window_name);
+	bool getShowWindow();
+	void setShowWindow(bool show_window);
 
 protected:
 	virtual bool begin(std::string name);
