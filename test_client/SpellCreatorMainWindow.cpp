@@ -1,4 +1,5 @@
 #include "SpellCreatorMainWindow.h"
+#include <Spell.h>
 
 SpellCreatorMainWindow::SpellCreatorMainWindow()
 {

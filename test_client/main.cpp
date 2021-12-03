@@ -51,6 +51,7 @@ void testImgui()
 	window.setVerticalSyncEnabled(true);
 	
 	EventHandlerManager event_handler_manager;
+	SpellCreator spell_creator;
 
 	ImGuiUIManager ui_manager(&window);
 	event_handler_manager.addHandler(ui_manager.getEventHandler());
@@ -58,8 +59,8 @@ void testImgui()
 	InputHandler input_handler;
 	event_handler_manager.addHandler(&input_handler);
 
-	SpellCreatorMainWindow main_window;
-	ui_manager.addWindow(&main_window);
+	ui_manager.addWindow(spell_creator.getMainWindow());
+	ui_manager.addWindow(spell_creator.getSpellbookWindow());
 
 	sf::Color bgColor;
 
@@ -74,7 +75,6 @@ void testImgui()
 		while (window.pollEvent(event)) 
 		{
 			event_handler_manager.callHandlers(event);
-			//ui_manager.processEvent(event);
 
 			if (event.type == sf::Event::Closed) 
 			{

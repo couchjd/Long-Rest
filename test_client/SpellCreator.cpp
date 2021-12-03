@@ -2,22 +2,15 @@
 
 #include <iostream>
 
-SpellCreator::SpellCreator()
+SpellCreatorMainWindow* 
+SpellCreator::getMainWindow()
 {
+	return &m_main_window;
 }
 
-Spellbook* SpellCreator::getSpellbook()
+SpellbookWindow* 
+SpellCreator::getSpellbookWindow()
 {
-	return &m_spellbook;
+	return &m_spellbook_window;
 }
 
-void 
-SpellCreator::setShowWindows(bool show_windows)
-{
-	m_show_windows = show_windows;
-}
-
-bool SpellCreator::getShowWindows()
-{
-	return m_show_windows;
-}

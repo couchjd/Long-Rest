@@ -1,7 +1,6 @@
 #pragma once
 
 #include "GuiBaseWindow.h"
-#include "SpellCreator.h"
 
 #define SPELL_NAME_SIZE 100
 
