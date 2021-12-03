@@ -45,12 +45,30 @@
     <ClCompile Include="SpellbookWindow.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="SpellCreatorMainWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ImGuiUiMangager.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GuiBaseWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="SpellCreator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SpellbookWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpellCreatorMainWindow.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ImGuiUiManager.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GuiBaseWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

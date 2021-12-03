@@ -1,9 +1,11 @@
 #pragma once
+
+#include "SpellCreatorMainWindow.h"
+
 #include <MagerySpell.h>
 #include <Spellbook.h>
-#include "SpellbookWindow.h"
 
-#define SPELL_NAME_SIZE 100
+class SpellCreatorMainWindow;
 
 class SpellCreator
 {
@@ -12,33 +14,13 @@ public:
 
 	void showWindows();
 
-	bool getShowWindow();
-
-	void setShowWindow(const bool show_window);
-
-	void addSpell();
-
-	void openSpellbook();
-
-	void closeSpellbook();
-
 	Spellbook* getSpellbook();
 
+	void setShowWindows(bool show_windows);
+	bool getShowWindows();
+
 private:
-	void drawWidgets();
-
 	Spellbook m_spellbook;
-	SpellbookWindow* m_spellbook_window;
-
-	bool m_show_main_window;
-	bool m_show_spellbook_window;
-
-	char m_spell_name[SPELL_NAME_SIZE];
-
-	int m_earth;
-	int m_air;
-	int m_fire;
-	int m_water;
-	int m_nature;
-	int m_arcane;
+	bool m_show_windows;
+	SpellCreatorMainWindow* m_main_window;
 };
