@@ -88,6 +88,7 @@
     <ClCompile Include="..\include\imgui\imgui_tables.cpp" />
     <ClCompile Include="..\include\imgui\imgui_widgets.cpp" />
     <ClCompile Include="EventHandlerManager.cpp" />
+    <ClCompile Include="FileOpenWindow.cpp" />
     <ClCompile Include="ImGuiEventHandler.cpp" />
     <ClCompile Include="ImGuiUiMangager.cpp" />
     <ClCompile Include="GuiBaseWindow.cpp" />
@@ -111,6 +112,7 @@
   <ItemGroup>
     <ClInclude Include="EventHandler.h" />
     <ClInclude Include="EventHandlerManager.h" />
+    <ClInclude Include="FileOpenWindow.h" />
     <ClInclude Include="ImGuiEventHandler.h" />
     <ClInclude Include="ImGuiUiManager.h" />
     <ClInclude Include="GuiBaseWindow.h" />

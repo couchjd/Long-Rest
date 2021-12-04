@@ -4,6 +4,7 @@
 #include "ImGuiUiManager.h"
 #include "InputHandler.h"
 #include "EventHandlerManager.h"
+#include "FileOpenWindow.h"
 
 #include <nlohmann/json.hpp>
 
@@ -61,6 +62,9 @@ void testImgui()
 
 	ui_manager.addWindow(spell_creator.getMainWindow());
 	ui_manager.addWindow(spell_creator.getSpellbookWindow());
+
+	FileOpenWindow file_open_window;
+	ui_manager.addWindow(&file_open_window);
 
 	sf::Color bgColor;
 
