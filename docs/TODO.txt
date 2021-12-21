@@ -4,3 +4,5 @@
 - Create separate class for Imgui windows
 - Create new class for spell creator main window -- inherited from ImGuiWindow class
 - Inherit from ImGuiWindow class for SpellbookWindow class 
+
+HRY7JBrqPRxBu4c
